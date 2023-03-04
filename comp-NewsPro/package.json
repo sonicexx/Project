@@ -1,0 +1,14 @@
+{
+  "name": "comp-newspro",
+  "version": "1.0.0",
+  "description": "一个使用原生 JS 和 Webpack 搭建出来的 新闻头条 类移动端项目",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "JS、Webpack、SASS、ES6"
+  ],
+  "author": "nice",
+  "license": "ISC"
+}
