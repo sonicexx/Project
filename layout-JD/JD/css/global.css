@@ -1,0 +1,52 @@
+/* 项目样式初始化 */
+body {
+  margin: 0;
+  background-color: #f0f3ef;
+  font-family: 'Microsoft YaHei', Heiti SC, tahoma, arial, 'Hiragino Sans GB',
+    '\5B8B\4F53', sans-serif;
+  color: #666;
+
+  /* 字体去锯齿 */
+  -webkit-font-smoothing: antialiased;
+  /*  */
+}
+
+/* ul 三大件 */
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+div,
+ul,
+li {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+input,
+button {
+  /* 注：border 没有 0 的值 */
+  border: none;
+
+  outline: none;
+}
+
+/* 清浮动元素 */
+.clearfix {
+  content: '';
+  display: table;
+  clear: both;
+}
+/* 给父级，子级 float 就会清除浮动 */
+
+/* 页面内容宽度 */
+.layer {
+  width: 1190px;
+  margin: 0 auto;
+}
