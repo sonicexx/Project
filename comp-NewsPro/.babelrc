@@ -1,0 +1,13 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        // "targets": {
+        //   "browsers": ["last 8 versions", "safari >= 5"],
+        //   "node": "6.10"
+        // }
+      }
+    ]
+  ]
+}
