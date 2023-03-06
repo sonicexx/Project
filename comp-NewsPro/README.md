@@ -39,3 +39,23 @@
 - 前端数据相关多技术提升
 - 企业级模块化、组件化开发————易读、易维护、易产品迭代
 - 企业级编码规范与经验
+
+## <center>技术点</center>
+
+##### - tpl 模板渲染
+
+Header 组件为例
+
+1. 创建 Header 组件的文件：components/Header/index.js + index.scss + index.tpl
+2. 写 index.tpl 组件内 html 结构 [Header/index.tpl](./src/components/Header/index.tpl)
+3. 创建一个全局方法，将 tpl 的模板数据替换并返回 [libs/utils.js](./src/libs/utils.js)
+4. 写 Header 中的 [index.js](./src/components/Header/index.js) 文件的逻辑
+   - 导入样式 index.scss
+   - 导入模板 index.tpl
+   - 导入模板数据替换方法 tplReplace ( libs/utils.js )
+   - export default 出去自身组件对象：name、tpl 方法（获取替换数据、返回 tplReplace 方法的执行数据）
+5. 项目 [index.js](./src/js/index.js) 入口文件
+   - 获取 app 主节点
+   - 导入 Header/index.js
+   - 调用 Header/index.js 中的 tpl 方法，存储返回值
+   - 将返回的模板值赋予 app 主节点的 innerHTML

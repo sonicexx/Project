@@ -112,8 +112,8 @@ const config = {
       {
         test: /\.s?css$/,
         use: [
-          // 'style-loader', // 不单独打包 css
-          MiniCssExtractPlugin.loader, // 单独打包 css
+          'style-loader', // 不单独打包 css
+          // MiniCssExtractPlugin.loader, // 单独打包 css
           'css-loader',
           'postcss-loader',
           'sass-loader',
@@ -125,6 +125,7 @@ const config = {
         options: {
           name: 'imgs/[name]_[hash:8].[ext]',
           limit: 5 * 1024,
+          esModule: false, // 防止超过大小限制的资源变成 url([object, object])
         },
       },
     ],
