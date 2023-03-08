@@ -1,4 +1,4 @@
-import { getKeys, tplReplace } from '../../libs/utils';
+import { getItemNode, getKeys, tplReplace } from '../../libs/utils';
 import './index.scss';
 
 // 导入 四种 模板：没有图片的、1张、2张、3张的
@@ -66,5 +66,25 @@ export default {
         item.style.opacity = 1;
       };
     });
+  },
+
+  bindEvent(oList, setCurrentNews) {
+    oList.addEventListener(
+      'click',
+      this._goToDetail.bind(this, setCurrentNews),
+      false
+    );
+  },
+
+  _goToDetail(setCurrentNews) {
+    const tar = getItemNode(arguments[1].target);
+    const options = {
+      idx: tar.dataset.index,
+      pageNum: tar.dataset.page,
+    };
+
+    setCurrentNews(options);
+
+    window.location.href = `detail.html?path=${location.pathname}`;
   },
 };

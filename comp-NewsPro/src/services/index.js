@@ -10,7 +10,15 @@ class Service extends HTTP {
     return new Promise((resolve, reject) => {
       // console.log(datas[type]);
       setTimeout(() => {
-        resolve(setPageData(datas[type].result.data, count));
+        // resolve({
+        //   status: 404,
+        //   msg: '404！没有获取到数据',
+        // });
+        resolve({
+          status: 200,
+          mas: '成功获取数据',
+          data: setPageData(datas[type].result.data, count),
+        });
       }, 1000);
     });
   }

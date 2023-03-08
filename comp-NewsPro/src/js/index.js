@@ -3,11 +3,12 @@ import Header from '../components/Header';
 import NavBar from '../components/NavBar';
 import NewsList from '../components/NewsList/index.js';
 import PageLoading from '../components/PageLoading/index.js';
+import MoreLoading from '../components/MoreLoading/index.js';
+import NoDataTip from '../components/NoDataTip/index.js';
 
 import { NEWS_TYPE } from '../data';
 import services from '../services/index.js';
 import { scrollToBottom } from '../libs/utils.js';
-import MoreLoading from '../components/MoreLoading/index.js';
 
 // 入口文件 一般使用匿名自执行函数包起来，证明是一个整体
 // 注意：为区分上边代码,括号前要有分号分割： ;(()=>{})()
@@ -31,14 +32,13 @@ import MoreLoading from '../components/MoreLoading/index.js';
 
   const init = async () => {
     render();
-
     await setNewsList();
-
     bindEvent();
   };
 
   function bindEvent() {
     NavBar.bindEvent(setType);
+    NewsList.bindEvent(oListWrapper, setCurrentNews);
     window.addEventListener(
       'scroll',
       scrollToBottom.bind(null, getMoreList),
@@ -101,7 +101,15 @@ import MoreLoading from '../components/MoreLoading/index.js';
     config.isloading = true; // 开始请求数据，设置 isloading 状态
 
     oListWrapper.innerHTML = PageLoading.tpl();
-    newsData[type] = await services.getNewsList(type, count);
+    const res = await services.getNewsList(type, count);
+
+    if (res.status === 404) {
+      oListWrapper.innerHTML = '';
+      NoDataTip.add(oListWrapper, res.msg);
+      return;
+    }
+
+    newsData[type] = res.data;
 
     console.log(newsData);
 
@@ -138,6 +146,14 @@ import MoreLoading from '../components/MoreLoading/index.js';
         }, 1000);
       }
     }
+  }
+
+  function setCurrentNews(options) {
+    const { idx, pageNum } = options;
+    localStorage.setItem(
+      'currentNews',
+      JSON.stringify(newsData[config.type][pageNum][idx])
+    );
   }
 
   init();
