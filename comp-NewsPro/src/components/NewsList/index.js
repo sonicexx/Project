@@ -14,7 +14,7 @@ import wrapper from './tpl/wrapper.tpl'; // top
 export default {
   name: 'NewsList',
 
-  wrapperTpl(top) {
+  wrapperTpl(top = 44) {
     return tplReplace(wrapper, { top });
   },
 

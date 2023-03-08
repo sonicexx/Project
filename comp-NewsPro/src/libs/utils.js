@@ -71,7 +71,7 @@ export function getUrlQueryValue(key) {
   const reg = new RegExp('(^|&)' + key + '=([^&]*)(&|$)', 'i');
   const res = location.search.slice(1).match(reg);
 
-  return res ? decodeURIComponent(res[2]) : null;
+  return res ? decodeURIComponent(res[2]) : '/';
 }
 
 // ******** 内部方法 ******** /;

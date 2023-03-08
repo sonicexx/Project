@@ -3,17 +3,20 @@ import './imports.js';
 import Header from '../components/Header/index.js';
 import Iframe from '../components/Iframe/index.js';
 import { getUrlQueryValue } from '../libs/utils.js';
+import Follow from '../components/Follow/index.js';
 
 (doc => {
   const oApp = doc.getElementById('app');
 
   const targetNews = JSON.parse(localStorage.getItem('currentNews'));
-  console.log(targetNews);
+  let followedList = JSON.parse(localStorage.getItem('followedList') || '[]');
 
   const path = getUrlQueryValue('path');
 
   const init = () => {
     render();
+
+    bindEvent();
   };
 
   function render() {
@@ -23,10 +26,31 @@ import { getUrlQueryValue } from '../libs/utils.js';
       showLeftIcon: true,
       showRightIcon: false,
     });
-
     const iframeTpl = Iframe.tpl(targetNews.url);
+    const followTpl = createFollowTpl();
+    oApp.innerHTML += headerTpl + iframeTpl + followTpl;
+  }
 
-    oApp.innerHTML += headerTpl + iframeTpl;
+  function createFollowTpl() {
+    return followedList.find(item => item.uniquekey === targetNews.uniquekey)
+      ? Follow.tpl('star')
+      : Follow.tpl('star-o');
+  }
+
+  function bindEvent() {
+    Follow.bindEvent(setFollow);
+  }
+
+  function setFollow(followed) {
+    if (followed) {
+      followedList.push(targetNews);
+    } else {
+      followedList = followedList.filter(
+        item => item.uniquekey !== targetNews.uniquekey
+      );
+    }
+
+    localStorage.setItem('followedList', JSON.stringify(followedList));
   }
 
   init();
