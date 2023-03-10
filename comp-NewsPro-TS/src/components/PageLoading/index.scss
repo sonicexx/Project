@@ -1,0 +1,19 @@
+.page-loading {
+  position: absolute;
+  width: 150px;
+  top: 200px;
+  left: 50%;
+  border-radius: 15px;
+  transform: translateX(-50%);
+
+  animation: in 0.5s forwards ease-in;
+}
+
+@keyframes in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
