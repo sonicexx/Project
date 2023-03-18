@@ -1,6 +1,4 @@
 <template>
-  <router-link :to="{ name: 'home' }">home</router-link>
-  <router-link :to="{ name: 'about' }">about</router-link>
   <router-view></router-view>
 </template>
 
@@ -10,4 +8,11 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+html,
+body,
+#app,
+.container {
+  height: 100%;
+}
+</style>
