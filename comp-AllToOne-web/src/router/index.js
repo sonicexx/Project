@@ -7,6 +7,26 @@ const routes = [
     name: 'home',
     component: Index,
   },
+  {
+    path: '/detail',
+    name: 'detail',
+    component: () => import('views/Detail.vue'),
+  },
+  {
+    path: '/list',
+    name: 'list',
+    component: () => import('views/List.vue'),
+  },
+  {
+    path: '/search',
+    name: 'search',
+    component: () => import('views/Search.vue'),
+  },
+  {
+    path: '/city',
+    name: 'city',
+    component: () => import('views/City.vue'),
+  },
 ];
 
 const router = createRouter({

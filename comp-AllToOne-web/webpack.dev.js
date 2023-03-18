@@ -6,7 +6,7 @@ const configDev = {
   //   devtool: '',
   devServer: {
     open: true,
-    host: '192.168.1.100',
+    host: 'localhost',
     port: 8080,
   },
   module: {

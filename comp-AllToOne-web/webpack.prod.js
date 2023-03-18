@@ -51,13 +51,6 @@ const configProd = {
         type: 'javascript/auto',
         exclude: /node_modules/,
       },
-      {
-        test: /\.(woff2?|eot|TTF|otf)$/i,
-        type: 'asset/resource',
-        generator: {
-          filename: 'font/[name].[hash:6][ext]',
-        },
-      },
     ],
   },
 

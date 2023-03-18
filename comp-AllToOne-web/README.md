@@ -17,7 +17,7 @@
     - state.js: 状态管理文件
     - mutations.js: mutations 方法管理文件
 
-  - **assets**：一些初始化文件、fastclick、resets.css、border.css、缓冲中 icon 图片、按钮数据、字体图标
+  - **assets**：一些初始化文件、resets.css、border.css、缓冲中 icon 图片、按钮数据、字体图标
 
   - **models**：组织管理数据、请求数据、数据缓存
 

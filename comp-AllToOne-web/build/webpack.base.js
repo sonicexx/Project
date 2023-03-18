@@ -20,6 +20,13 @@ const configBase = {
         loader: 'vue-loader',
         exclude: /node_modules/,
       },
+      {
+        test: /\.(woff2?|eot|ttf|otf|ico|svg)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'font/[name].[hash:6][ext]',
+        },
+      },
     ],
   },
   plugins: [
