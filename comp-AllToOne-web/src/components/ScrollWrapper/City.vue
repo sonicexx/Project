@@ -13,6 +13,7 @@ import CityList from './CityList/index';
 
 import { ref, onMounted } from 'vue';
 import BetterScroll from 'better-scroll';
+import options from './bScroll-config';
 export default {
   name: 'CityScrollWrapper',
   components: { CurrentCity, CityList },
@@ -20,13 +21,6 @@ export default {
     const wrapper = ref();
 
     onMounted(() => {
-      const options = {
-        scrollY: true,
-        scrollX: false,
-        mouseWheel: true,
-        click: true,
-        taps: true,
-      };
       new BetterScroll(wrapper.value, options);
     });
 

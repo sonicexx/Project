@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <common-header :title="title"></common-header>
+    <common-header :title="category + '列表'"></common-header>
   </div>
 </template>
 
@@ -9,9 +9,16 @@ import CommonHeader from 'components/Header/Common.vue';
 export default {
   name: 'List',
   components: { CommonHeader },
+  props: {
+    category: {
+      type: String,
+      default() {
+        return '😶';
+      },
+    },
+  },
   setup() {
-    const title = '列表';
-    return { title };
+    return {};
   },
 };
 </script>
