@@ -112,4 +112,14 @@
           |-FalseInput.vue：假输入框-跳转至搜索页
       |-Home.vue：主页 header——使用：CitySelector、FalseInput 组件
       |-Common.vue：其他页面通用 header——使用 Backward 组件
+|——ScrollWrapper
+      |——CityList: 城市页面使用
+          |-CurrentCity.vue 当前城市
+          |-index.vue 城市列表 Wrapper——使用 Sub 插件
+          |-Sub.vue 城市列表 item
+      |-City.vue 城市选择页面——使用 CurrentCity、CityList-index
+      |-Index.vue
+      |-List.vue
+      |-Search.vue
+      |-Detail.vue
 ```
