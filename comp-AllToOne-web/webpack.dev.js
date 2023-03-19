@@ -8,6 +8,7 @@ const configDev = {
     open: true,
     host: 'localhost',
     port: 8080,
+    historyApiFallback: true,
   },
   module: {
     rules: [

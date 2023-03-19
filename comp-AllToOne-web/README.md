@@ -101,3 +101,15 @@
       |-webpack.dev.js：开发环境
       |-webpack.prod.js：生产环境
 ```
+
+- 组件结构部署
+
+```
+|——Header
+      |——sub
+          |-Backward.vue：返回按钮
+          |-CitySelector.vue：城市选择按钮
+          |-FalseInput.vue：假输入框-跳转至搜索页
+      |-Home.vue：主页 header——使用：CitySelector、FalseInput 组件
+      |-Common.vue：其他页面通用 header——使用 Backward 组件
+```

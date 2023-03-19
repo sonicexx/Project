@@ -1,16 +1,14 @@
 <template>
   <div class="container">
-    Index
-    <router-link :to="{ name: 'detail' }">to detail</router-link>
-    <router-link :to="{ name: 'city' }">to city</router-link>
-    <router-link :to="{ name: 'search' }">to search</router-link>
-    <router-link :to="{ name: 'list' }">to list</router-link>
+    <home-header></home-header>
   </div>
 </template>
 
 <script>
+import HomeHeader from 'components/Header/Home';
 export default {
   name: 'Index',
+  components: { HomeHeader },
   setup() {
     return {};
   },
