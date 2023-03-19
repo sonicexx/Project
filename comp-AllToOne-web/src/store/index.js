@@ -1,21 +1,10 @@
 import { createStore } from 'vuex';
+import state from './state';
+import mutations from './mutations';
 
 const store = createStore({
-  state() {
-    return {
-      count: 9527,
-    };
-  },
-  mutations: {
-    add(state, n) {
-      state.count += n;
-    },
-  },
-  actions: {
-    add({ commit }, n) {
-      commit('add', n);
-    },
-  },
+  state,
+  mutations,
 });
 
 export default store;

@@ -8,7 +8,8 @@ const configDev = {
     open: true,
     host: 'localhost',
     port: 8080,
-    historyApiFallback: true,
+    historyApiFallback: true, // history 模式下，返回/刷新页面找不到
+    // 这个配置相当于，找不到地址时，导航到主页
   },
   module: {
     rules: [

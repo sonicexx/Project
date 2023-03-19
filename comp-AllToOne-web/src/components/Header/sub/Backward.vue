@@ -11,7 +11,6 @@ export default {
   setup() {
     const router = useRouter();
     const onRouteBack = () => {
-      console.log('back');
       router.go(-1);
     };
 

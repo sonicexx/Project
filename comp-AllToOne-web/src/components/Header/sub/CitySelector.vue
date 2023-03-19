@@ -8,11 +8,12 @@
 </template>
 
 <script>
+import { useStore } from 'vuex';
 export default {
   name: 'CitySelector',
   setup() {
-    const cityName = '全部';
-    return { cityName };
+    const store = useStore();
+    return { cityName: store.state.cityName };
   },
 };
 </script>
