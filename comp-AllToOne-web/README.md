@@ -113,13 +113,31 @@
       |-Home.vue：主页 header——使用：CitySelector、FalseInput 组件
       |-Common.vue：其他页面通用 header——使用 Backward 组件
 |——ScrollWrapper
+      |——Sub: 存放一些 ScrollWrapper 组件中共同使用的组件
+          |-Error.vue
+          |-Stars.vue: 星级评分
+          |-SubTitle.vue: home/detail 页面使用的大标签头
+          |-Swiper.vue: 详情页轮播图 swiper/vue-awesome-swiper
+          |-Tags.vue: home-foodList 组件中使用的标签组件
       |——CityList: 城市页面使用
           |-CurrentCity.vue 当前城市
           |-index.vue 城市列表 Wrapper——使用 Sub 插件
           |-Sub.vue 城市列表 item
-      |——CategoryIcons
+      |——CategoryIcons: home 页面头部的 icon 导航
           |-index.vue: icons-wrapper
           |-Sub.vue: icon-item
+      |——FoodList    |
+      |——HotelList   |
+      |——KtvList     |home ScrollWrapper 内的便签
+      |——MassageList |
+      |——ViewList    |
+      |——Detail
+          |——Sub: detail ScrollWrapper内使用的公用组件
+          |-Food.vue
+          |-Hotel.vue
+          |-Ktv.vue
+          |-Massage.vue
+          |-View.vue
       |-City.vue 城市选择页面——使用 CurrentCity、CityList-index
       |-Index.vue
       |-List.vue

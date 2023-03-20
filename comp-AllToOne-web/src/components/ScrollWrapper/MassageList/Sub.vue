@@ -42,6 +42,9 @@ export default {
 .massage-item {
   a {
     @include list-item-row;
+    img {
+      width: 100%;
+    }
   }
 
   .info {

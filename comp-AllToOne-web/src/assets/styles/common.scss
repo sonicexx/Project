@@ -4,6 +4,19 @@ html {
   background-color: #ededed;
 }
 
+img {
+  object-fit: cover;
+  animation: imgShow 1s forwards;
+}
+@keyframes imgShow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .container {
   display: flex;
   flex-direction: column;
