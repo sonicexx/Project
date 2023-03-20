@@ -1,7 +1,6 @@
 let cityInfo = {
   cityId: 0,
   cityName: '全部',
-  field: 'all',
 };
 
 try {
@@ -10,6 +9,10 @@ try {
   }
 } catch (err) {}
 
-const state = () => cityInfo;
+const state = () => ({
+  field: 'all',
+  DataPool: {},
+  cityInfo,
+});
 
 export default state;

@@ -19,3 +19,27 @@
   justify-content: center;
   align-items: center;
 }
+
+@mixin list-item-row {
+  @include flex-row;
+  height: 1.2rem;
+  padding: 0.1rem;
+  border-bottom: 1px solid #ddd;
+  background-color: #fff;
+  box-sizing: border-box;
+  .img {
+    height: 100%;
+    width: 0.99rem;
+    margin-right: 0.1rem;
+    overflow: hidden;
+    img {
+      height: 100%;
+    }
+  }
+}
+
+@mixin stars {
+  @include flex-row;
+  align-items: center;
+  font-size: 0.14rem;
+}

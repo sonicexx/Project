@@ -117,6 +117,9 @@
           |-CurrentCity.vue 当前城市
           |-index.vue 城市列表 Wrapper——使用 Sub 插件
           |-Sub.vue 城市列表 item
+      |——CategoryIcons
+          |-index.vue: icons-wrapper
+          |-Sub.vue: icon-item
       |-City.vue 城市选择页面——使用 CurrentCity、CityList-index
       |-Index.vue
       |-List.vue

@@ -12,7 +12,7 @@ class HTTP {
       data: qs.stringify(options.data),
     })
       .then(res => {
-        options.success(res);
+        options.success(res.data);
       })
       .catch(err => {
         options.error(err);

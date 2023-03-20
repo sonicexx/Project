@@ -13,7 +13,7 @@ import CityList from './CityList/index';
 
 import { ref, onMounted } from 'vue';
 import BetterScroll from 'better-scroll';
-import options from './bScroll-config';
+import options from 'js/bScroll-config';
 export default {
   name: 'CityScrollWrapper',
   components: { CurrentCity, CityList },

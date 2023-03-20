@@ -18,6 +18,7 @@ module.exports = {
       components: resolve(__dirname, './src/components'),
       utils: resolve(__dirname, './src/utils'),
       views: resolve(__dirname, './src/views'),
+      models: resolve(__dirname, '../src/models'),
     };
   },
 };

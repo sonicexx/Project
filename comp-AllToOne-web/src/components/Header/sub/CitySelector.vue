@@ -1,19 +1,26 @@
 <template>
   <div class="city">
     <router-link :to="{ name: 'city' }" custom v-slot="{ navigate }">
-      <span @click="navigate" class="city-name">{{ cityName }}</span>
+      <span @click="navigate" class="city-name">{{ currentCityName }}</span>
       <span class="iconfont icon-header-arrow"></span>
     </router-link>
   </div>
 </template>
 
 <script>
+import { onActivated, ref } from 'vue';
 import { useStore } from 'vuex';
 export default {
   name: 'CitySelector',
   setup() {
     const store = useStore();
-    return { cityName: store.state.cityName };
+    const currentCityName = ref(store.state.cityInfo.cityName);
+    onActivated(() => {
+      if (currentCityName.value !== store.state.cityInfo.cityName) {
+        currentCityName.value = store.state.cityInfo.cityName;
+      }
+    });
+    return { currentCityName };
   },
 };
 </script>

@@ -1,3 +1,5 @@
+@import '~styles/variable.scss';
+
 html {
   background-color: #ededed;
 }
@@ -12,4 +14,9 @@ html {
   flex: 1;
   flex-direction: column;
   overflow: hidden;
+}
+
+.score {
+  margin-left: 0.05rem;
+  color: $starColor;
 }

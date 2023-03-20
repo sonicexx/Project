@@ -1,7 +1,7 @@
 const mutations = {
   selectCity(state, cityInfo) {
-    state.cityName = cityInfo.cityName;
-    state.cityId = cityInfo.cityId;
+    state.cityInfo.cityName = cityInfo.cityName;
+    state.cityInfo.cityId = cityInfo.cityId;
     localStorage.setItem('cityInfo', JSON.stringify(cityInfo));
   },
   selectField(state, field) {
