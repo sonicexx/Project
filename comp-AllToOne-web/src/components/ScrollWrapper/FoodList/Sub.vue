@@ -29,14 +29,24 @@
 <script>
 import Stars from 'components/ScrollWrapper/Sub/Stars.vue';
 import Tags from 'components/ScrollWrapper/Sub/Tags.vue';
+
+import { toRefs } from 'vue';
 export default {
   name: 'FoodItem',
   props: {
     data: Object,
   },
   components: { Stars, Tags },
-  setup() {
-    return {};
+  setup(props) {
+    const { data } = toRefs(props);
+    for (let k in data.value) {
+      if (k === 'keyword') {
+        if (typeof data.value[k] === 'string') {
+          data.value[k] = data.value[k].split(',');
+        }
+      }
+    }
+    return { data };
   },
 };
 </script>

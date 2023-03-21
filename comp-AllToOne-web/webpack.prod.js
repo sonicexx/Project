@@ -53,12 +53,13 @@ const configProd = {
       },
     ],
   },
-
   plugins: [
     new MiniCssExtractPlugin({
       filename: 'css/[name]_[contenthash:4].css',
     }),
   ],
+
+  performance: false,
 };
 
 module.exports = merge(configBase, configProd);

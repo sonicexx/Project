@@ -2,7 +2,7 @@
   <div class="list-wrapper">
     <food-item
       v-for="item of ListDatas"
-      :key="item.id"
+      :key="item.id + Math.floor(Math.random() * 1000)"
       :data="item"></food-item>
   </div>
 </template>

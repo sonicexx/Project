@@ -13,6 +13,7 @@ const state = () => ({
   field: 'all',
   DataPool: {},
   cityInfo,
+  isLoading: false,
 });
 
 export default state;

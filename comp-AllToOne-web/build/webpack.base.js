@@ -35,12 +35,13 @@ const configBase = {
     new HtmlWebpackPlugin({
       template: resolve(__dirname, '../src/index.html'),
       filename: 'index.html',
-      title: 'comp-vue',
+      title: '一线通',
       chunks: ['main'],
       chunksSortMode: 'manual',
+      favicon: resolve(__dirname, '../src/assets/imgs/favicon.ico'),
       minify: {
-        collapseWhitespace: false,
-        removeComments: false,
+        collapseWhitespace: true,
+        removeComments: true,
       },
     }),
     new DefinePlugin({

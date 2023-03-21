@@ -21,7 +21,6 @@ export default {
   },
   setup(props) {
     const { title } = props;
-    console.log(title);
     return {};
   },
 };

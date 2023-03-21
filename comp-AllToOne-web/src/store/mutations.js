@@ -7,6 +7,9 @@ const mutations = {
   selectField(state, field) {
     state.field = field;
   },
+  setLoading(state, isLoading) {
+    state.isLoading = isLoading;
+  },
 };
 
 export default mutations;
