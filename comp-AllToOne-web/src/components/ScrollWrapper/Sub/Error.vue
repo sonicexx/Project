@@ -1,5 +1,5 @@
 <template>
-  <div class="error-bd" v-show="errorShow">
+  <div class="error-bd">
     <span class="iconfont icon-error"></span>
     <p class="error-text">网络走丢了</p>
   </div>
@@ -8,14 +8,7 @@
 <script>
 export default {
   name: 'Error',
-  props: {
-    errorShow: {
-      type: Boolean,
-      default() {
-        return false;
-      },
-    },
-  },
+  props: {},
 };
 </script>
 

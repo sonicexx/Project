@@ -1,6 +1,9 @@
 <template>
   <div class="list-wrapper">
-    <view-item v-for="item of viewList" :key="item.id" :data="item"></view-item>
+    <view-item
+      v-for="item of ListDatas"
+      :key="item.id"
+      :data="item"></view-item>
   </div>
 </template>
 
@@ -10,7 +13,7 @@ export default {
   name: 'ViewList',
   components: { ViewItem },
   props: {
-    viewList: Array,
+    ListDatas: Array,
   },
   setup() {
     return {};

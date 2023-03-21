@@ -1,12 +1,13 @@
 <template>
   <div class="scroll-wrapper" ref="wrapper">
     <div class="scroll-content">
-      <template v-if="error">
-        <error :errorShow="error"></error>
-      </template>
-      <template v-else>
+      <loading v-show="isLoading"></loading>
+      <template v-if="!error" v-show="!isLoading">
         <detail-swiper :picDatas="detailData.pics"></detail-swiper>
         <component :is="'detail-' + field" :data="detailData"></component>
+      </template>
+      <template v-else>
+        <error :errorShow="error"></error>
       </template>
     </div>
   </div>
@@ -27,6 +28,7 @@ import DetailKtv from './Detail/Ktv';
 import DetailView from './Detail/View';
 
 import Error from './Sub/Error.vue';
+import Loading from './Sub/Loading';
 
 export default {
   name: 'DetailScrollWrapper',
@@ -38,12 +40,14 @@ export default {
     DetailView,
     DetailSwiper,
     Error,
+    Loading,
   },
   setup() {
     const route = useRoute();
 
     const detailData = ref({});
-    const error = ref(true);
+    const error = ref(false);
+    const isLoading = ref(false);
 
     const field = ref('');
     let currentField = '';
@@ -74,6 +78,8 @@ export default {
 
     function _getDatas() {
       const detailModel = new DetailModel();
+      isLoading.value = true;
+
       return detailModel
         .getDetailDatas(currentField, currentId)
         .then(({ status, data }) => {
@@ -89,6 +95,7 @@ export default {
             detailData.value = tempData;
             console.log(detailData.value);
 
+            isLoading.value = false;
             error.value = false;
           } else {
             error.value = true;
@@ -101,6 +108,7 @@ export default {
       detailData,
       field,
       error,
+      isLoading,
     };
   },
 };

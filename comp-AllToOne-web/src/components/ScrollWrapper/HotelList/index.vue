@@ -1,6 +1,6 @@
 <template>
   <div class="list-wrapper">
-    <hotel-item v-for="item of hotelList" :key="item.id" :data="item">
+    <hotel-item v-for="item of ListDatas" :key="item.id" :data="item">
     </hotel-item>
   </div>
 </template>
@@ -10,7 +10,7 @@ import HotelItem from './Sub';
 export default {
   name: 'HotelList',
   props: {
-    hotelList: Array,
+    ListDatas: Array,
   },
   components: { HotelItem },
 };

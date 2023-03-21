@@ -20,7 +20,7 @@
 
     <detail-keywords :keywords="data.comment_keyword"> </detail-keywords>
 
-    <detail-big-tag title="商家服务" icon="icon-service">
+    <detail-big-tag v-if="data.service" title="商家服务" icon="icon-service">
       <p class="parking">停车场：{{ data.service.parking ? '有' : '无' }}</p>
       <p class="wifi">WIFI：{{ data.service.wifi ? '有' : '无' }}</p>
     </detail-big-tag>

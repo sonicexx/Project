@@ -1,7 +1,7 @@
 <template>
   <div class="list-wrapper">
     <massage-item
-      v-for="item of massageList"
+      v-for="item of ListDatas"
       :key="item.id"
       :data="item"></massage-item>
   </div>
@@ -12,7 +12,7 @@ import MassageItem from './Sub';
 export default {
   name: 'MassageList',
   props: {
-    massageList: Array,
+    ListDatas: Array,
   },
   components: { MassageItem },
 };

@@ -7,6 +7,7 @@
 
 <script>
 import Backward from './sub/Backward.vue';
+
 export default {
   name: 'CommonHeader',
   components: { Backward },
@@ -14,16 +15,14 @@ export default {
     title: {
       type: String,
       default() {
-        return '一线生活通';
+        return '一线通';
       },
     },
   },
   setup(props) {
     const { title } = props;
-
-    return {
-      title,
-    };
+    console.log(title);
+    return {};
   },
 };
 </script>

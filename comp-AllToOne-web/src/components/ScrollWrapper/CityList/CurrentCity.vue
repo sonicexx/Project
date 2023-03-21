@@ -17,7 +17,7 @@ export default {
 
     const path = 'home';
     return {
-      cityName: store.state.cityName,
+      cityName: store.state.cityInfo.cityName,
       path,
     };
   },

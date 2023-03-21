@@ -31,9 +31,6 @@ export default {
       store.commit('selectField', f);
       router.push({
         name: 'list',
-        params: {
-          category: text,
-        },
       });
     }
     return { onRouteTo };

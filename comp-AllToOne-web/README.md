@@ -47,6 +47,20 @@
     - 配置每个页面数据管理的文件：model/
       主要使用类的继承，继承封装出来的 http 类，后期直接在文件中使用 **this.axiosPost({...})** 调用请求数据方法
 
+- 问题总结
+
+  - 关于 better-scroll
+    - 对于同步数据, 在 onMounted 生命周期中直接初始化 better-scroll 插件 不起作用
+      解决: 使用一个宏任务包裹 setTimeout
+    - 对于异步数据, 宏任务包裹不起作用
+      解决: 使用 async/await 函数, await 异步函数之后, 才初始化
+    - 可以直接使用 scroll.refresh
+  - 关于 vue-awesome-swiper
+    - 样式文件不起作用: 将包中的 css 文件保存到本地再引入
+  - 关于 keep-alive
+    - 包裹 router-view 注意, 结合动态组件使用 router-view => keep-alive => component
+    - 增加的生命周期函数: onActivated onDeactivated
+
 - 文件目录部署
 
 ```
@@ -143,4 +157,7 @@
       |-List.vue
       |-Search.vue
       |-Detail.vue
+|——Tab：list 组件使用的顶部导航
+      |-index.js
+      |-Sub.vue
 ```

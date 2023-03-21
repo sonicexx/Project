@@ -1,6 +1,9 @@
 <template>
   <div class="list-wrapper">
-    <food-item v-for="item of foodList" :key="item.id" :data="item"></food-item>
+    <food-item
+      v-for="item of ListDatas"
+      :key="item.id"
+      :data="item"></food-item>
   </div>
 </template>
 
@@ -9,14 +12,12 @@ import FoodItem from './Sub';
 export default {
   name: 'FoodList',
   props: {
-    foodList: Array,
+    ListDatas: Array,
   },
   components: {
     FoodItem,
   },
-  setup() {
-    return {};
-  },
+  setup() {},
 };
 </script>
 

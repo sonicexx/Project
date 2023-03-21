@@ -3,19 +3,19 @@
     <div class="scroll-content">
       <category-icons></category-icons>
       <sub-title :title="homeTitle.viewDatas"></sub-title>
-      <view-list :viewList="homeDatas.viewDatas"></view-list>
+      <view-list :ListDatas="homeDatas.viewDatas"></view-list>
 
       <sub-title :title="homeTitle.foodDatas"></sub-title>
-      <food-list :foodList="homeDatas.foodDatas"></food-list>
+      <food-list :ListDatas="homeDatas.foodDatas"></food-list>
 
       <sub-title :title="homeTitle.hotelDatas"></sub-title>
-      <hotel-list :hotelList="homeDatas.hotelDatas"></hotel-list>
+      <hotel-list :ListDatas="homeDatas.hotelDatas"></hotel-list>
 
       <sub-title :title="homeTitle.massageDatas"></sub-title>
-      <massage-list :massageList="homeDatas.massageDatas"></massage-list>
+      <massage-list :ListDatas="homeDatas.massageDatas"></massage-list>
 
       <sub-title :title="homeTitle.ktvDatas"></sub-title>
-      <ktv-list :ktvList="homeDatas.ktvDatas"></ktv-list>
+      <ktv-list :ListDatas="homeDatas.ktvDatas"></ktv-list>
     </div>
   </div>
 </template>
