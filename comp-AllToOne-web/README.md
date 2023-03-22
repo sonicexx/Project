@@ -160,4 +160,6 @@
 |——Tab：list 组件使用的顶部导航
       |-index.js
       |-Sub.vue
+|——SearchInput：搜索框
+      |-index.vue
 ```

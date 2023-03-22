@@ -14,7 +14,7 @@
   </div>
 </template>
 
-<script>
+<script lang="js">
 import BetterScroll from 'better-scroll';
 import { onMounted, ref, onActivated, toRefs, watch } from 'vue';
 import { useStore } from 'vuex';
