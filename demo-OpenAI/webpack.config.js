@@ -8,14 +8,19 @@ const autoprefixer = require('autoprefixer');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  mode: 'development',
+  // mode: 'development',
+  mode: 'production',
+  devtool: 'nosources-source-map',
+  // devtool: 'eval-cheap-module-source-map',
   devServer: {
     open: true,
     port: 8080,
+    host: '192.168.1.100',
+    hot: true,
     proxy: {
       // url: 'https://api.openai-proxy.com/v1/chat/completions',
       '/api/v1': {
-        target: 'https://api.openai-proxy.com',
+        target: process.env.BASE_URL,
         secure: false,
         changeOrigin: true,
         pathRewrite: {
@@ -33,6 +38,14 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.tpl$/,
+        loader: 'ejs-loader',
+        options: {
+          esModule: false,
+        },
+        exclude: /node_modules/,
+      },
       {
         test: /\.ts$/,
         loader: 'babel-loader',
@@ -87,7 +100,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'css/[name]_[contenthash:4].css',
+      filename: 'css/[name].css',
     }),
     new HtmlWebpackPlugin({
       template: resolve(__dirname, './src/index.html'),
@@ -95,15 +108,18 @@ module.exports = {
       title: process.env.TITLE_MAIN,
       chunks: ['main'],
       chunksSortMode: 'manual',
+      favicon: resolve(__dirname, './src/assets/imgs/favicon.ico'),
       minify: {
-        removeComments: false,
-        collapseWhitespace: false,
+        removeComments: true,
+        collapseWhitespace: true,
       },
     }),
   ],
   resolve: {
     extensions: ['.ts', '.js'],
-    alias: {},
+    alias: {
+      '@': resolve(__dirname, './src'),
+    },
   },
   cache: {
     type: 'filesystem',
