@@ -8,10 +8,11 @@ module.exports = {
   // mode: 'development',
   mode: 'production',
   devtool: 'nosources-source-map',
+  // devtool: 'eval-cheap-module-source-map',
   devServer: {
     open: true,
-    host: '192.168.1.100',
-    port: 8080,
+    // host: '192.168.1.100',
+    port: 8090,
   },
   entry: {
     index: './src/ts/index.ts',
@@ -19,7 +20,7 @@ module.exports = {
     collections: './src/ts/collections.ts',
   },
   output: {
-    filename: 'js/[name]_[contenthash:4].js',
+    filename: 'js/[name].js',
     path: resolve(__dirname, 'dist/'),
   },
   resolve: {
@@ -86,7 +87,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'css/[name]_[contenthash:4].css',
+      filename: 'css/[name].css',
     }),
     new HtmlWebpackPlugin({
       template: './src/index.html',
@@ -116,6 +117,7 @@ module.exports = {
       title: '我的收藏',
       chunks: ['collections'],
       chunksSortMode: 'manual',
+      favicon: resolve(__dirname, './src/assets/img/favicon.ico'),
       minify: {
         removeComments: true,
         collapseWhitespace: true,

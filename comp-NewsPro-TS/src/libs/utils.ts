@@ -18,6 +18,7 @@ export function findItemNode(
 ): HTMLElement | undefined {
   if (tar.className.split(' ')[0] === className) return tar;
   while ((tar = tar.parentNode as HTMLElement)) {
+    if (!tar.className) return;
     if (tar.className.split(' ')[0] === className) return tar;
   }
 }

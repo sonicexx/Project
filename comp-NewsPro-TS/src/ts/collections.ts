@@ -25,7 +25,7 @@ import NoDataTip from '@/components/NoDataTip';
 
   function render(): void {
     const headerTpl: string = Header.tpl({
-      url: 'https://sonicexx.github.io/news-pro-online/',
+      url: '/',
       title: HEADER_TITLE.collections,
       showLeftIcon: true,
       showRightIcon: false,
@@ -42,9 +42,8 @@ import NoDataTip from '@/components/NoDataTip';
       NoDataTip.tpl(oListWrapper, '还没有收藏');
       return;
     }
-
+    console.log('1111111111111111');
     NewsList.tpl(oListWrapper, followedNewsList, 1);
-
     NewsList.imgShow();
   }
 

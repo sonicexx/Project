@@ -66,6 +66,7 @@ export default <IComponent>{
 
   getNewsMsg(fn: Function) {
     const tar: HTMLElement = findItemNode(arguments[1].target, 'news-item')!;
+    if (!tar) return;
     fn({
       pageNum: +tar.dataset.page!,
       idx: +tar.dataset.index!,
