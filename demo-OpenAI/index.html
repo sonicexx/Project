@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="referrer" content="no-referrer" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <title>A-Idiot</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="menu-cover">
+        <div class="search-wrapper">
+          <input type="text" placeholder="添加新聊天..." />
+          <button id="add-btn">+</button>
+        </div>
+        <ul class="list"></ul>
+        <button id="hide-btn" class=""></button>
+      </div>
+      <div class="msg-cover">
+        <div class="title">
+          <div class="ai"></div>
+          <button id="remove-history-btn">清除聊天记录</button>
+        </div>
+        <div class="msg-wrapper"></div>
+        <div class="send-cover">
+          <textarea
+            class="send-content"
+            placeholder="点击输入内容..."
+            cols="30"
+            rows="10"
+            style="resize: none"></textarea>
+          <button id="send-btn">发送</button>
+        </div>
+      </div>
+    </div>
+    <script src="./src/main.js" type="module"></script>
+  </body>
+</html>

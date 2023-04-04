@@ -1,0 +1,169 @@
+@media (max-width: 600px) {
+  #app {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    font-size: 0.16rem;
+
+    .menu-cover {
+      position: absolute;
+      bottom: 0;
+      width: 3rem;
+      margin-left: -3rem;
+      transition: transform 0.5s;
+
+      &.show {
+        transform: translateX(100%);
+
+        #hide-btn {
+          top: 0.25rem;
+          background-color: #aaa;
+
+          &::after {
+            content: '《';
+            color: #fff;
+            padding-left: 0;
+          }
+        }
+      }
+
+      .list {
+        li {
+          font-size: 0.16rem;
+          padding: 0.2rem;
+
+          button {
+            font-size: 0.2rem;
+          }
+        }
+      }
+
+      #hide-btn {
+        position: absolute;
+        right: 0;
+        top: 0.16rem;
+
+        width: 0.5rem;
+        padding: 0.1rem;
+        text-align: left;
+        font-size: 0.2rem;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        transform: translateX(100%);
+        background-color: transparent;
+
+        transition: all 0.5s;
+
+        &::after {
+          content: '三';
+          padding: 0;
+          color: #aaa;
+          font-weight: 600;
+          padding-left: 0.05rem;
+        }
+      }
+    }
+
+    .msg-cover {
+      width: 100%;
+      padding-bottom: 1rem;
+
+      .title {
+        height: 0.8rem;
+        padding: 0.1rem;
+        .ai {
+          margin-top: 0.04rem;
+          width: 0.5rem;
+          height: 0.5rem;
+          border-radius: 50%;
+
+          &::before {
+            left: 0.1rem;
+          }
+          &::after {
+            right: 0.1rem;
+          }
+        }
+
+        #remove-history-btn {
+          right: 0.1rem;
+          padding: 0.05rem 0.1rem;
+        }
+      }
+
+      .msg-wrapper {
+        height: 100%;
+        padding: 0.1rem;
+        padding-top: 0.8rem;
+        font-size: 0.12rem;
+
+        .send {
+        }
+
+        .recieve {
+        }
+
+        .msg-box {
+          max-width: 94%;
+          margin-top: 0.2rem;
+
+          .content {
+            padding: 0.1rem;
+            .script-box {
+              margin-block: 0.1rem;
+              margin-inline: 0;
+              padding: 0.1rem;
+              padding-top: 0.25rem;
+              overflow: auto;
+
+              &::after {
+                display: block;
+                position: absolute;
+                color: #666666;
+                right: 0.08rem;
+                top: 0.05rem;
+              }
+            }
+            .created {
+              width: 1rem;
+              margin-block: 0.1rem;
+              padding: 0.04rem 0.1rem;
+              border-radius: 0.02rem;
+            }
+          }
+        }
+      }
+
+      .send-cover {
+        position: fixed;
+        height: 1.2rem;
+        padding: 0.1rem;
+        padding-bottom: 0.2rem;
+        textarea {
+          font-size: 0.16rem;
+        }
+
+        #send-btn {
+          right: 0.1rem;
+          bottom: 0.1rem;
+          padding: 0.05rem 0.25rem;
+          font-size: 0.16rem;
+          background-color: #eee;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 700px) {
+  #app {
+    .menu-cover {
+      float: left;
+      width: 26%;
+
+      #hide-btn {
+        display: none;
+      }
+    }
+  }
+}
