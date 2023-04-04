@@ -46,7 +46,7 @@ import {
       currentContext = contextList.find(item => item.isActive).contextName;
       currentContextId = contextList.find(item => item.isActive).id;
     }
-    // renderHistory();
+    renderHistory();
 
     oContextList.innerHTML = contextList
       .map(
