@@ -276,7 +276,9 @@ import {
     let res = await printer.render({ str });
     scroller.stop();
 
-    saveHTML();
+    setTimeout(() => {
+      saveHTML();
+    });
 
     isLoading = false;
   }
